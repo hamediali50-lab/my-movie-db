@@ -1,1 +1,207 @@
-const a0_0x19cef9=a0_0x5053;(function(_0x50bcc3,_0x50c3e7){const _0x59ff5a=a0_0x5053,_0x2984e2=_0x50bcc3();while(!![]){try{const _0x2ef111=-parseInt(_0x59ff5a(0x108))/0x1+-parseInt(_0x59ff5a(0xc0))/0x2+parseInt(_0x59ff5a(0xc1))/0x3+parseInt(_0x59ff5a(0xf9))/0x4+parseInt(_0x59ff5a(0xde))/0x5*(-parseInt(_0x59ff5a(0xfc))/0x6)+parseInt(_0x59ff5a(0xdb))/0x7+-parseInt(_0x59ff5a(0xe2))/0x8*(-parseInt(_0x59ff5a(0xcc))/0x9);if(_0x2ef111===_0x50c3e7)break;else _0x2984e2['push'](_0x2984e2['shift']());}catch(_0xb253ed){_0x2984e2['push'](_0x2984e2['shift']());}}}(a0_0x3f79,0xcf13b));const axios=require(a0_0x19cef9(0xbf)),fs=require('fs'),crypto=require('crypto'),zlib=require('zlib'),API_BASE_URL=a0_0x19cef9(0xce),SECRET_PHRASE=process['env'][a0_0x19cef9(0xc4)];function a0_0x3f79(){const _0x1e0b72=['parse','185116fCNNKM','💾\x20Saving\x20changes...','year','/api/series/top-rated','/api/series/new','\x0a🌐\x20Checking:\x20','add','randomBytes','search','has','createHash','split','axios','2620316tlQDTn','3953988TtmZND','image','series','DB_SECRET','title','toString','?page=','readFileSync','search_results','type','(((.+)+)+)+$','99PZEvEJ','exit','https://cinemaplus-app.vercel.app','slice','update','/api/series/updated','aes-256-cbc','sources','gunzipSync','hex','سریال\x20آپدیت\x20شده','create','from','✅\x20Done.','length','3551681YybtLg',':\x20All\x20Skipped\x20\x0d','error','886175PFXAIa','📦\x20Updates\x20>\x201000.\x20Merging\x20into\x20Archive...','/api/movies/new','createDecipheriv','81904ZUoGFa','url','/api/seasons/','\x20\x20\x20Page\x20','existsSync','💤\x20No\x20changes.','\x0a🎉\x20Processed\x20','apply','utf8','concat','map','سینمایی\x20جدید','constructor','filter','movie','archive.enc','سریال\x20جدید','final','stdout','seasons','get','forceUpdate','/api/movies/top-rated','5875496OPnptI','join','stringify','36DzmTRW','all','سریال\x20برتر','description','log','\x20\x20\x20No\x20new\x20items\x20found\x20here.\x20Skipping\x20rest.','maxPages','real_id','updates.json','push','gzipSync'];a0_0x3f79=function(){return _0x1e0b72;};return a0_0x3f79();}!SECRET_PHRASE&&(console[a0_0x19cef9(0xdd)]('❌\x20Error:\x20DB_SECRET\x20is\x20missing!'),process[a0_0x19cef9(0xcd)](0x1));const ARCHIVE_FILE=a0_0x19cef9(0xf1),UPDATES_FILE=a0_0x19cef9(0x104),IS_FIRST_RUN=![],CONCURRENCY_LIMIT=0xf,TARGET_ENDPOINTS=[{'url':a0_0x19cef9(0xe0),'type':a0_0x19cef9(0xf0),'name':a0_0x19cef9(0xed),'maxPages':0x3e8},{'url':a0_0x19cef9(0xf8),'type':a0_0x19cef9(0xf0),'name':'سینمایی\x20برتر','maxPages':0x3e8},{'url':a0_0x19cef9(0x10c),'type':a0_0x19cef9(0xc3),'name':a0_0x19cef9(0xf2),'maxPages':0x3e8},{'url':a0_0x19cef9(0xd1),'type':a0_0x19cef9(0xc3),'name':a0_0x19cef9(0xd6),'maxPages':0x3e8,'forceUpdate':!![]},{'url':a0_0x19cef9(0x10b),'type':a0_0x19cef9(0xc3),'name':a0_0x19cef9(0xfe),'maxPages':0x3e8}],client=axios[a0_0x19cef9(0xd7)]({'baseURL':API_BASE_URL,'timeout':0x7530,'headers':{'User-Agent':'Mozilla/5.0'}});function a0_0x5053(_0x25dab9,_0x5474f3){const _0x19e081=a0_0x3f79();return a0_0x5053=function(_0x3b41e4,_0x2467d3){_0x3b41e4=_0x3b41e4-0xb8;let _0x3f79f2=_0x19e081[_0x3b41e4];return _0x3f79f2;},a0_0x5053(_0x25dab9,_0x5474f3);}function getKey(){const _0x5f04be=a0_0x19cef9;return crypto[_0x5f04be(0xbd)]('sha256')['update'](String(SECRET_PHRASE))['digest']();}function compressAndEncrypt(_0x23779a){const _0x4c630e=a0_0x19cef9,_0x43aaa8=JSON[_0x4c630e(0xfb)](_0x23779a),_0x568253=zlib[_0x4c630e(0x106)](_0x43aaa8),_0x26e9b8=crypto[_0x4c630e(0xba)](0x10),_0x1612d8=crypto['createCipheriv'](_0x4c630e(0xd2),getKey(),_0x26e9b8);let _0x13f56a=_0x1612d8[_0x4c630e(0xd0)](_0x568253);return _0x13f56a=Buffer['concat']([_0x13f56a,_0x1612d8['final']()]),_0x26e9b8[_0x4c630e(0xc6)](_0x4c630e(0xd5))+':'+_0x13f56a[_0x4c630e(0xc6)](_0x4c630e(0xd5));}function decryptAndDecompress(_0xd410f0){const _0x14ffb5=a0_0x19cef9;try{const _0x1ce117=_0xd410f0[_0x14ffb5(0xbe)](':'),_0x4a32f0=Buffer[_0x14ffb5(0xd8)](_0x1ce117['shift'](),_0x14ffb5(0xd5)),_0x266024=Buffer[_0x14ffb5(0xd8)](_0x1ce117[_0x14ffb5(0xfa)](':'),'hex'),_0x359b9c=crypto[_0x14ffb5(0xe1)](_0x14ffb5(0xd2),getKey(),_0x4a32f0);let _0x222218=_0x359b9c[_0x14ffb5(0xd0)](_0x266024);_0x222218=Buffer[_0x14ffb5(0xeb)]([_0x222218,_0x359b9c[_0x14ffb5(0xf3)]()]);const _0x517807=zlib[_0x14ffb5(0xd4)](_0x222218);return _0x517807['toString'](_0x14ffb5(0xea));}catch(_0x25c0f5){return null;}}async function fetchSeasons(_0x38278f){const _0x1b8fe3=a0_0x19cef9;try{const {data:_0x19d603}=await client['get'](_0x1b8fe3(0xe4)+_0x38278f);return _0x19d603;}catch(_0x50b906){return null;}}async function processItems(_0x1afcbe,_0x21b8e5,_0xc36d80){const _0x54cd26=a0_0x19cef9,_0x2d88fa=[],_0x384e33=[];for(const _0x984830 of _0x1afcbe){const _0x439661='plus_'+_0x984830['id'];if(!_0x21b8e5['forceUpdate']&&_0xc36d80[_0x54cd26(0xbc)](_0x439661))continue;const _0x27ef90={'id':_0x439661,'real_id':_0x984830['id'],'title':_0x984830[_0x54cd26(0xc5)],'image':_0x984830[_0x54cd26(0xc2)],'year':_0x984830[_0x54cd26(0x10a)],'imdb':_0x984830['imdb'],'description':_0x984830[_0x54cd26(0xff)],'itemType':_0x21b8e5[_0x54cd26(0xca)],'sources':_0x984830[_0x54cd26(0xd3)]||[],'seasons':null};if(!_0xc36d80['has'](_0x439661))_0xc36d80[_0x54cd26(0xb9)](_0x439661);_0x2d88fa[_0x54cd26(0x105)](_0x27ef90);if(_0x21b8e5[_0x54cd26(0xca)]===_0x54cd26(0xc3))_0x384e33[_0x54cd26(0x105)](_0x27ef90);}if(_0x384e33[_0x54cd26(0xda)]>0x0)for(let _0x592c42=0x0;_0x592c42<_0x384e33[_0x54cd26(0xda)];_0x592c42+=CONCURRENCY_LIMIT){const _0x4e1cf8=_0x384e33[_0x54cd26(0xcf)](_0x592c42,_0x592c42+CONCURRENCY_LIMIT);await Promise[_0x54cd26(0xfd)](_0x4e1cf8[_0x54cd26(0xec)](async _0x5a7bf2=>{const _0x161d0c=_0x54cd26,_0xf2071b=await fetchSeasons(_0x5a7bf2[_0x161d0c(0x103)]);if(_0xf2071b)_0x5a7bf2[_0x161d0c(0xf5)]=_0xf2071b;}));}return _0x2d88fa;}async function scrapeCategory(_0x2c8173,_0x1c4fc9){const _0x3fb2cf=a0_0x19cef9;let _0x2e6881=[];const _0x224327=IS_FIRST_RUN?_0x2c8173[_0x3fb2cf(0x102)]:0x5;console['log'](_0x3fb2cf(0xb8)+_0x2c8173['name']);for(let _0x2d36af=0x0;_0x2d36af<_0x224327;_0x2d36af++){try{const {data:_0x8ca498}=await client[_0x3fb2cf(0xf6)](_0x2c8173[_0x3fb2cf(0xe3)]+_0x3fb2cf(0xc7)+_0x2d36af),_0x2cb8c9=_0x8ca498['posters']||_0x8ca498[_0x3fb2cf(0xc9)]||_0x8ca498;if(!_0x2cb8c9||_0x2cb8c9[_0x3fb2cf(0xda)]===0x0)break;const _0x1f9bd6=await processItems(_0x2cb8c9,_0x2c8173,_0x1c4fc9);if(_0x1f9bd6['length']===0x0&&!_0x2c8173[_0x3fb2cf(0xf7)]){if(!IS_FIRST_RUN){console['log'](_0x3fb2cf(0x101));break;}}_0x1f9bd6[_0x3fb2cf(0xda)]>0x0?(_0x2e6881[_0x3fb2cf(0x105)](..._0x1f9bd6),console['log']('\x20\x20\x20Page\x20'+(_0x2d36af+0x1)+':\x20Processed\x20'+_0x1f9bd6[_0x3fb2cf(0xda)]+'\x20items.')):process[_0x3fb2cf(0xf4)]['write'](_0x3fb2cf(0xe5)+(_0x2d36af+0x1)+_0x3fb2cf(0xdc));}catch(_0x1ddcc0){break;}}return _0x2e6881;}async function main(){const _0xfef0e5=a0_0x19cef9,_0x4a7607=(function(){let _0xf1ab62=!![];return function(_0x1b6c92,_0x206709){const _0x24723d=_0xf1ab62?function(){const _0x285204=a0_0x5053;if(_0x206709){const _0x374887=_0x206709[_0x285204(0xe9)](_0x1b6c92,arguments);return _0x206709=null,_0x374887;}}:function(){};return _0xf1ab62=![],_0x24723d;};}()),_0x2dee16=_0x4a7607(this,function(){const _0x5d4468=a0_0x5053;return _0x2dee16[_0x5d4468(0xc6)]()[_0x5d4468(0xbb)](_0x5d4468(0xcb))['toString']()[_0x5d4468(0xee)](_0x2dee16)[_0x5d4468(0xbb)](_0x5d4468(0xcb));});_0x2dee16(),console['log']('🚀\x20Auto-Update\x20Scraper\x20Started...');let _0x5961d5=[],_0x2666a9=[];if(fs['existsSync'](ARCHIVE_FILE))try{const _0x399553=fs[_0xfef0e5(0xc8)](ARCHIVE_FILE,_0xfef0e5(0xea)),_0xb875f4=decryptAndDecompress(_0x399553);if(_0xb875f4)_0x5961d5=JSON[_0xfef0e5(0x107)](_0xb875f4);}catch(_0x4eb602){console['log']('Error\x20reading\x20archive.');}fs[_0xfef0e5(0xe6)](UPDATES_FILE)&&(_0x2666a9=JSON[_0xfef0e5(0x107)](fs[_0xfef0e5(0xc8)](UPDATES_FILE,_0xfef0e5(0xea))));const _0x2dbb42=new Set([..._0x5961d5,..._0x2666a9][_0xfef0e5(0xec)](_0x172a25=>_0x172a25['id']));let _0x32fe5d=0x0;for(const _0x3295e8 of TARGET_ENDPOINTS){const _0x15ccdd=await scrapeCategory(_0x3295e8,_0x2dbb42);if(_0x15ccdd[_0xfef0e5(0xda)]>0x0){for(const _0x4aeb1c of _0x15ccdd){const _0x5c5d3a=_0x2666a9['findIndex'](_0x4b2b1d=>_0x4b2b1d['id']===_0x4aeb1c['id']);_0x5c5d3a>-0x1?_0x2666a9[_0x5c5d3a]=_0x4aeb1c:_0x2666a9['unshift'](_0x4aeb1c);}_0x32fe5d+=_0x15ccdd['length'];}}console[_0xfef0e5(0x100)](_0xfef0e5(0xe8)+_0x32fe5d+'\x20items.');if(_0x2666a9[_0xfef0e5(0xda)]>0x3e8){console['log'](_0xfef0e5(0xdf));const _0x560e22=new Set(_0x2666a9[_0xfef0e5(0xec)](_0x4a6a91=>_0x4a6a91['id']));_0x5961d5=_0x5961d5[_0xfef0e5(0xef)](_0x183f1c=>!_0x560e22[_0xfef0e5(0xbc)](_0x183f1c['id'])),_0x5961d5=[..._0x2666a9,..._0x5961d5],_0x2666a9=[];}_0x32fe5d>0x0?(console[_0xfef0e5(0x100)](_0xfef0e5(0x109)),fs['writeFileSync'](ARCHIVE_FILE,compressAndEncrypt(_0x5961d5)),fs['writeFileSync'](UPDATES_FILE,compressAndEncrypt(_0x2666a9)),console[_0xfef0e5(0x100)](_0xfef0e5(0xd9))):console[_0xfef0e5(0x100)](_0xfef0e5(0xe7));}main();
+// scraper-bot.js - نسخه نهایی (با قابلیت آپدیت قسمت‌های جدید)
+const axios = require('axios');
+const fs = require('fs');
+const crypto = require('crypto');
+const zlib = require('zlib');
+
+// --- تنظیمات ---
+const API_BASE_URL = 'https://cinemaplus-app.vercel.app';
+const SECRET_PHRASE = process.env.DB_SECRET; 
+
+if (!SECRET_PHRASE) {
+    console.error("❌ Error: DB_SECRET is missing!");
+    process.exit(1);
+}
+
+const ARCHIVE_FILE = 'archive.enc';
+const UPDATES_FILE = 'updates.json';
+
+// ⚠️ مهم: چون آرشیو را داری، این را false گذاشتم
+const IS_FIRST_RUN = false; 
+const CONCURRENCY_LIMIT = 15; 
+
+const TARGET_ENDPOINTS = [
+    // فیلم‌ها (تکراری‌ها اسکیپ می‌شوند)
+    { url: '/api/movies/new', type: 'movie', name: 'سینمایی جدید', maxPages: 1000 },
+    { url: '/api/movies/top-rated', type: 'movie', name: 'سینمایی برتر', maxPages: 1000 },
+    
+    // سریال‌ها
+    { url: '/api/series/new', type: 'series', name: 'سریال جدید', maxPages: 1000 },
+    
+    // ⚡️ نکته مهم: forceUpdate را برای این دسته true کردیم تا قسمت‌های جدید را بگیرد
+    { url: '/api/series/updated', type: 'series', name: 'سریال آپدیت شده', maxPages: 1000, forceUpdate: true },
+    
+    { url: '/api/series/top-rated', type: 'series', name: 'سریال برتر', maxPages: 1000 }
+];
+
+const client = axios.create({
+    baseURL: API_BASE_URL,
+    timeout: 30000,
+    headers: { 'User-Agent': 'Mozilla/5.0' }
+});
+
+function getKey() {
+    return crypto.createHash('sha256').update(String(SECRET_PHRASE)).digest();
+}
+
+function compressAndEncrypt(data) {
+    const jsonString = JSON.stringify(data);
+    const compressedBuffer = zlib.gzipSync(jsonString);
+    const iv = crypto.randomBytes(16);
+    const cipher = crypto.createCipheriv('aes-256-cbc', getKey(), iv);
+    let encrypted = cipher.update(compressedBuffer);
+    encrypted = Buffer.concat([encrypted, cipher.final()]);
+    return iv.toString('hex') + ':' + encrypted.toString('hex');
+}
+
+function decryptAndDecompress(text) {
+    try {
+        const textParts = text.split(':');
+        const iv = Buffer.from(textParts.shift(), 'hex');
+        const encryptedText = Buffer.from(textParts.join(':'), 'hex');
+        const decipher = crypto.createDecipheriv('aes-256-cbc', getKey(), iv);
+        let decryptedBuffer = decipher.update(encryptedText);
+        decryptedBuffer = Buffer.concat([decryptedBuffer, decipher.final()]);
+        const decompressedBuffer = zlib.gunzipSync(decryptedBuffer);
+        return decompressedBuffer.toString('utf8');
+    } catch (error) { return null; }
+}
+
+async function fetchSeasons(seriesId) {
+    try { const { data } = await client.get(`/api/seasons/${seriesId}`); return data; } catch (error) { return null; }
+}
+
+async function processItems(items, config, existingIdsSet) {
+    const processed = [];
+    const seriesQueue = [];
+
+    for (const item of items) {
+        const myId = `plus_${item.id}`;
+        
+        // اگر forceUpdate نباشد و تکراری باشد، رد کن
+        // اما اگر forceUpdate باشد (بخش آپدیت شده)، حتی اگر تکراری بود، دوباره بگیر (برای قسمت‌های جدید)
+        if (!config.forceUpdate && existingIdsSet.has(myId)) continue;
+
+        const cleanItem = {
+            id: myId, real_id: item.id, title: item.title, image: item.image, year: item.year, imdb: item.imdb,
+            description: item.description, itemType: config.type, sources: item.sources || [], seasons: null 
+        };
+        
+        // فقط اگر آیتم جدید است به لیست IDها اضافه کن (در حالت آپدیت اجباری، ID از قبل هست)
+        if (!existingIdsSet.has(myId)) existingIdsSet.add(myId);
+        
+        processed.push(cleanItem);
+        if (config.type === 'series') seriesQueue.push(cleanItem);
+    }
+
+    if (seriesQueue.length > 0) {
+        for (let i = 0; i < seriesQueue.length; i += CONCURRENCY_LIMIT) {
+            const batch = seriesQueue.slice(i, i + CONCURRENCY_LIMIT);
+            await Promise.all(batch.map(async (seriesItem) => {
+                const seasonData = await fetchSeasons(seriesItem.real_id);
+                if (seasonData) seriesItem.seasons = seasonData;
+            }));
+        }
+    }
+    return processed;
+}
+
+async function scrapeCategory(endpointConfig, existingIdsSet) {
+    let categoryItems = [];
+    // در حالت عادی فقط 5 صفحه چک می‌شود
+    const maxPages = IS_FIRST_RUN ? endpointConfig.maxPages : 5;
+    
+    console.log(`\n🌐 Checking: ${endpointConfig.name}`);
+    for (let page = 0; page < maxPages; page++) {
+        try {
+            const { data } = await client.get(`${endpointConfig.url}?page=${page}`);
+            const results = data.posters || data.search_results || data;
+            if (!results || results.length === 0) break;
+            
+            const processedPage = await processItems(results, endpointConfig, existingIdsSet);
+            
+            // در حالت forceUpdate ما همه را دوباره می‌گیریم، پس شرط "هیچ آیتم جدیدی نیست" را برمی‌داریم
+            // اما در بقیه حالت‌ها اگر تکراری بود قطع می‌کنیم
+            if (processedPage.length === 0 && !endpointConfig.forceUpdate) {
+                if (!IS_FIRST_RUN) {
+                    console.log("   No new items found here. Skipping rest.");
+                    break; 
+                }
+            }
+            
+            // فقط اگر واقعاً جدید بود یا آپدیت شده بود اضافه کن
+            if (processedPage.length > 0) {
+                categoryItems.push(...processedPage);
+                console.log(`   Page ${page + 1}: Processed ${processedPage.length} items.`);
+            } else {
+                process.stdout.write(`   Page ${page + 1}: All Skipped \r`);
+            }
+        } catch (error) { break; }
+    }
+    return categoryItems;
+}
+
+async function main() {
+    console.log("🚀 Auto-Update Scraper Started...");
+
+    let archive = [];
+    let updates = [];
+
+    if (fs.existsSync(ARCHIVE_FILE)) {
+        try {
+            const fileData = fs.readFileSync(ARCHIVE_FILE, 'utf8');
+            const jsonStr = decryptAndDecompress(fileData);
+            if (jsonStr) archive = JSON.parse(jsonStr);
+        } catch (e) { console.log("Error reading archive."); }
+    }
+    if (fs.existsSync(UPDATES_FILE)) {
+        updates = JSON.parse(fs.readFileSync(UPDATES_FILE, 'utf8'));
+    }
+
+    const existingIds = new Set([...archive, ...updates].map(i => i.id));
+    let totalAddedOrUpdated = 0;
+
+    for (const endpoint of TARGET_ENDPOINTS) {
+        const fetchedItems = await scrapeCategory(endpoint, existingIds);
+        
+        if (fetchedItems.length > 0) {
+            for (const item of fetchedItems) {
+                // اگر آیتم قبلاً در آپدیت‌ها بوده، جایگزینش کن (آپدیت کن)
+                const existingUpdateIndex = updates.findIndex(u => u.id === item.id);
+                if (existingUpdateIndex > -1) {
+                    updates[existingUpdateIndex] = item; // جایگزینی
+                } else {
+                    // اگر در آرشیو بوده اما الان آپدیت شده، باید بیاد توی لیست آپدیت‌ها
+                    updates.unshift(item);
+                }
+            }
+            totalAddedOrUpdated += fetchedItems.length;
+        }
+    }
+
+    console.log(`\n🎉 Processed ${totalAddedOrUpdated} items.`);
+
+    // حد نصاب 1000 تایی برای ادغام با آرشیو اصلی (کاهش دانلود کاربر)
+    if (updates.length > 1000) {
+        console.log("📦 Updates > 1000. Merging into Archive...");
+        // حذف تکراری‌ها از آرشیو (چون ممکنه آیتم آپدیت شده الان بره تو آرشیو)
+        const updateIds = new Set(updates.map(u => u.id));
+        archive = archive.filter(item => !updateIds.has(item.id));
+        
+        // انتقال به آرشیو
+        archive = [...updates, ...archive];
+        updates = [];
+    }
+
+    // ذخیره
+    if (totalAddedOrUpdated > 0) {
+        console.log("💾 Saving changes...");
+        fs.writeFileSync(ARCHIVE_FILE, compressAndEncrypt(archive));
+        fs.writeFileSync(UPDATES_FILE, JSON.stringify(updates));
+        console.log("✅ Done.");
+    } else {
+        console.log("💤 No changes.");
+    }
+}
+
+main();
