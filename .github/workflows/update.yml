@@ -1,0 +1,46 @@
+name: RedMovie Auto Updater
+
+on:
+  schedule:
+    # هر 30 دقیقه یکبار اجرا شود
+    - cron: '*/30 * * * *'
+  workflow_dispatch: # امکان اجرای دستی (دکمه Run)
+
+jobs:
+  scrape-and-update:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write # اجازه ذخیره کردن فایل در دیتابیس
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run Scraper Bot
+      env:
+        # رمز عبور را از تنظیمات امن گیت‌هاب می‌خواند
+        DB_SECRET: ${{ secrets.DB_SECRET }}
+      run: node scraper-bot.js
+
+    - name: Commit and Push changes
+      run: |
+        git config --global user.name "RedMovie Bot"
+        git config --global user.email "bot@redmovie.com"
+        
+        # اگر تغییری در فایل‌ها بود، آن را ذخیره کن
+        if [[ -n $(git status -s) ]]; then
+          git add updates.json archive.enc
+          git commit -m "🚀 Auto-update: New content added"
+          git push
+        else
+          echo "No changes to commit."
+        fi
